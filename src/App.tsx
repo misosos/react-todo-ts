@@ -12,6 +12,7 @@ export type Todo = {
 export default function App() {
     const [todos, setTodos] = useState<Todo[]>([]);
     const nextId = useRef(1);
+
     const handleAdd = (text: string) => {
         setTodos((prev) => [...prev, {
             id: nextId.current++,
@@ -19,11 +20,15 @@ export default function App() {
         }]);
     };
 
+    const handleRemove = (id: number) => {
+        setTodos(todos.filter((todo) => todo.id !== id));
+    };
+
     return (
         <TodoTemplate>
             <h1>Todo List</h1>
             <TodoInsert onAdd={handleAdd}/>
-            <TodoList todos={todos}/>
+            <TodoList todos={todos} onRemove={handleRemove}/>
         </TodoTemplate>
     );
 }

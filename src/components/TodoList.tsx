@@ -6,12 +6,12 @@ interface Todo {
     done: boolean;
 }
 
-export default function TodoList({ todos }: { todos: Todo[] }) {
+export default function TodoList({ todos, onRemove }: { todos: Todo[] , onRemove : (id: number) => void}) {
 
     return (
         <ul>
             {todos.map((t) => (
-                <TodoItem key={t.id} todo={t} />
+                <TodoItem key={t.id} todo={t} onRemove={onRemove} />
             ))}
         </ul>
     );
