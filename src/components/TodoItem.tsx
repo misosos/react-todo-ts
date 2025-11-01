@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 interface Todo {
     id: number;
     text: string;
@@ -5,10 +7,15 @@ interface Todo {
 }
 
 export default function TodoItem({todo} : {todo : Todo}){
+    const [checked, setChecked] = useState(false);
     return (
-        <li>
-            {todo.text}
-        </li>
+        <>
+            <input
+                type="checkbox"
+                checked={checked}
+                onChange={() => setChecked((prev) => !prev)}
+            />
+            {checked ? (<span><del>{todo.text}</del></span>) : (<span>{todo.text}</span>)}<br/>
+        </>
     );
-
 }
