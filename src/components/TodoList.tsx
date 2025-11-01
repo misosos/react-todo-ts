@@ -6,7 +6,7 @@ interface Todo {
     done: boolean;
 }
 
-export default function TodoList({ todos, onRemove }: { todos: Todo[] , onRemove : (id: number) => void}) {
+export default function TodoList({ todos, onRemove }: { todos: Todo[] , onRemove : RemoveTodo}) {
 
     return (
         <ul>

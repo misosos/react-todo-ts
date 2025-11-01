@@ -1,6 +1,6 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
 
-export default function TodoInsert({ onAdd } : { onAdd : (text: string) => void }){
+export default function TodoInsert({ onAdd } : { onAdd : AddTodo }){
     const [value, setValue] = useState("");
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {

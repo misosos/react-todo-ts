@@ -1,12 +1,6 @@
 import {useState} from "react";
 
-interface Todo {
-    id: number;
-    text: string;
-    done: boolean;
-}
-
-export default function TodoItem({todo,onRemove} : {todo : Todo,onRemove : (id: number) => void}){
+export default function TodoItem({todo,onRemove} : {todo : Todo, onRemove : RemoveTodo}){
     const [checked, setChecked] = useState(false);
     return (
         <>
