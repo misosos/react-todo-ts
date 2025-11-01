@@ -13,7 +13,7 @@ export default function TodoItem({todo} : {todo : Todo}){
             <input
                 type="checkbox"
                 checked={checked}
-                onChange={() => setChecked((prev) => !prev)}
+                onChange={() => setChecked((checked) => !checked)}
             />
             {checked ? (<span><del>{todo.text}</del></span>) : (<span>{todo.text}</span>)}<br/>
         </>
