@@ -19,10 +19,16 @@ export default function App() {
     };
 
     return (
-        <TodoTemplate>
-            <h1>Todo List</h1>
-            <TodoInsert onAdd={handleAdd}/>
-            <TodoList todos={todos} onRemove={handleRemove}/>
-        </TodoTemplate>
+      <TodoTemplate>
+        <div className="container-app">
+          <div className="card">
+            <div className="app-header">
+              <h1>Todo List</h1>
+            </div>
+            <TodoInsert onAdd={handleAdd} />
+            <TodoList todos={todos} onRemove={handleRemove} />
+          </div>
+        </div>
+      </TodoTemplate>
     );
 }

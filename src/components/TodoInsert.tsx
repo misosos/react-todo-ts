@@ -16,14 +16,17 @@ export default function TodoInsert({ onAdd } : { onAdd : AddTodo }){
     };
     return (
         <>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="flex gap-2 mt-4">
                 <input
                     type="text"
                     onChange={onChange}
                     value={value}
                     placeholder="할 일을 입력하고 Enter"
+                    className="input flex-1"
                 />
-                <button type="submit">추가</button>
+                <button type="submit" className="btn">
+                    추가
+                </button>
             </form>
         </>
     );
