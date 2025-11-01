@@ -12,6 +12,7 @@ export default function TodoInsert({ onAdd } : { onAdd : (text: string) => void 
         const text = value.trim();
         if (!text) return;
         onAdd(text);
+        setValue(""); //입력창 초기화
     };
     return (
         <>
